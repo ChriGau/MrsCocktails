@@ -7,6 +7,7 @@ class CocktailsController < ApplicationController
 
   def show
     # instancier @doses = array qui contient des entités doses rattachées au cocktail
+    # pour dans le show n'afficher que les doses attachées au cocktail cliqué.
     @doses = [] # init
     @all_doses = Dose.all
     @all_doses.each do |dose|
@@ -14,6 +15,8 @@ class CocktailsController < ApplicationController
         @doses << dose
       end
     end
+    # N.B. on aurait pu faire @cocktail.doses.each do ... dans la view, on aurait
+    # récupéré toutes les doses de ce cocktail.
   end
 
   def new
@@ -28,7 +31,6 @@ class CocktailsController < ApplicationController
   # POST /cocktails.json
   def create
     @cocktail = Cocktail.new(cocktail_params)
-
 
     respond_to do |format|
       if @cocktail.save!

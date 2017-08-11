@@ -21,6 +21,7 @@
     <div class="card-user btn btn-primary" style = "color: white"><%= link_to 'Show', cocktail_path(cocktail) %> </div>
     <div class="card-user btn btn-success" style = "color: white"><%= link_to 'Edit', edit_cocktail_path(cocktail) %></div>
     <div class="card-user btn btn-danger" style = "color: white"><%= link_to 'Destroy', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <div class="card-user btn btn-primary" style = "color: white"><%= link_to 'Add Dose', new_cocktail_dose_path(cocktail) %></div>
     <br>
   </div>
   </div>

@@ -15,6 +15,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-plugin'
 end
 
+gem 'pry-byebug'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.5'

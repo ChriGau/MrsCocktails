@@ -1,4 +1,6 @@
-<%= simple_form_for(:dose) do |f| %>
+<!-- cf https://stackoverflow.com/questions/17437373/simple-form-for-fails-with-cant-write-unknown-attribute-builder -->
+
+<%= simple_form_for([@cocktail, Dose.new]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -9,11 +11,15 @@
     <%= f.input :description %>
   </div>
 
-    <div class="form-inputs">
-    <%= f.select :cocktail_id, collection: @ingredients %>
+<!--  get ingredient_id -->
+  <div class="form-inputs">
+    <%= f.input :ingredient_id, collection: Ingredient.all %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+
 <% end %>
+
+

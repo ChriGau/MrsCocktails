@@ -1,0 +1,35 @@
+<h1>Details of the cocktail: </h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cocktail.name %>
+</p>
+
+
+<!-- Liste des doses liées au cocktail -->
+
+<div class="row">
+<!-- on recoit du controller @doses qui contient des entités doses rattachées à ce cocktail -->
+<% @doses.each do |dose| %>
+<div class="col-xs-12 col-md-3 col-lg-4">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)); margin: 20px; border-radius: 10px; padding: 10px;">
+    <div class="card-category">
+    <%= dose.amount %>
+    </div>
+    <div class="card-description">
+      <h2><%= dose.description %></h2>
+      <p> <%= dose.description %></p>
+    </div>
+    <br>
+  </div>
+  </div>
+<% end %> <!-- end of if -->
+</div>
+
+<%= link_to 'Edit', edit_cocktail_dose_path(@cocktail) %> |
+<%= link_to 'Back to cocktail', cocktail_path(@cocktail) %>
+<%= link_to 'Add new dose', new_cocktail_dose_path(@cocktail) %>
+
+

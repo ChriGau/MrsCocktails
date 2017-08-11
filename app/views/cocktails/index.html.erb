@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cocktails</h1>
+<!-- Link to go to ingredients' list -->
+<div class="btn btn-success"><%= link_to 'See list of ingredients >>', ingredients_path %></div>
+
+<div class="row">
+
+
+
+<% @cocktails.each do |cocktail| %>
+<div class="col-xs-12 col-md-3 col-lg-4">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)); margin: 20px; border-radius: 10px; padding: 10px;">
+    <div class="card-category">
+    <%= cocktail.name %>
+    </div>
+    <div class="card-description">
+      <h2><%= cocktail.name.upcase %></h2>
+      <p> <%= cocktail.name %></p>
+    </div>
+    <div class="card-user btn btn-primary" style = "color: white"><%= link_to 'Show', cocktail_path(cocktail) %> </div>
+    <div class="card-user btn btn-success" style = "color: white"><%= link_to 'Edit', edit_cocktail_path(cocktail) %></div>
+    <div class="card-user btn btn-danger" style = "color: white"><%= link_to 'Destroy', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <br>
+  </div>
+  </div>
+<% end %>
+
+
+
+</div>
+<br>
+
+<div class="btn btn-success"><%= link_to 'New cocktail', new_cocktail_path %></div>

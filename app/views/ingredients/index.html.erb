@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ingredients</h1>
+
+<!-- Link to go back to the cocktails page -->
+<div class="btn btn-success"><%= link_to '<< Back to cocktails', cocktails_path %></div>
+
+
+<div class="row">
+
+
+
+
+<% @ingredients.each do |ingredient| %>
+<div class="col-xs-12 col-md-3 col-lg-4">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)); margin: 20px; border-radius: 10px; padding: 10px;">
+    <div class="card-category">
+    <%= ingredient.name %>
+    </div>
+    <div class="card-description">
+      <h2><%= ingredient.name %></h2>
+      <p> <%= ingredient.name %></p>
+    </div>
+    <div class="card-user btn btn-primary" style = "color: white"><%= link_to 'Show', ingredient_path(ingredient) %> </div>
+    <br>
+  </div>
+  </div>
+<% end %>
+
+
+
+</div>
+<br>
+
+<div class="btn btn-success"><%= link_to 'New ingredient', new_ingredient_path %></div>

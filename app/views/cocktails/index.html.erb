@@ -10,7 +10,17 @@
 
 <% @cocktails.each do |cocktail| %>
 <div class="col-xs-12 col-md-3 col-lg-4">
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)); margin: 20px; border-radius: 10px; padding: 10px;">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)); margin: 20px; border-radius: 10px; padding: 10px">
+
+    <!-- GET and display pictures for cocktail -->
+    <% if cocktail.photos.count > 0 %>
+      <% cocktail.photos.each do |photo| %>
+      <%= cl_image_tag(photo.path, width: 300, height: 200, crop: :fill, flags: "animated" ) %>
+      <% end %>
+      <% else %>
+      <%= cl_image_tag("iom7yvwnwaulyzrlsut5.jpg", border: "2px_solid_rgb:322d59", flags: "replace_image") %>
+    <% end %>
+
     <div class="card-category">
     <%= cocktail.name %>
     </div>
@@ -26,7 +36,6 @@
   </div>
   </div>
 <% end %>
-
 
 
 </div>

@@ -17,8 +17,16 @@ end
 
 gem 'pry-byebug'
 
-# gem for cCloudinary
+# gem for Cloudinary
 gem 'figaro'
+# gem fCloudinary
+gem 'cloudinary', '1.1.7'
+
+# ATTACHINARY (lien entre Cloudinary et notre DB)
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+# gem 'coffee-rails' # deja listee plus bas
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.5'

@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :ingredients, only: [:show, :index, :new, :create]
+
+  mount Attachinary::Engine => "/attachinary"
 end

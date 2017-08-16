@@ -31,17 +31,17 @@ before_action :set_dose, only: [:show, :edit, :update, :destroy]
     # pour test, ensuite on saisira l'ingredient
     # TODO : assign ingredient_id via form
     @dose.ingredient_id = 3
-    # @dose.save!
+    @dose.save!
 
-    respond_to do |format|
-      if @dose.save!
-        format.html { redirect_to @dose, notice: 'Dose was successfully created.' }
-        format.json { render :show, status: :created, location: @dose }
-      else
-        format.html { render :new }
-        format.json { render json: @dose.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @dose.save!
+    #     format.html { redirect_to @dose, notice: 'Dose was successfully created.' }
+    #     format.json { render :show, status: :created, location: @dose }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @dose.errors, status: :unprocessable_entity }
+    #   end
+    # end
 
     # retour au show du cocktail
     redirect_to cocktail_path(@dose.cocktail_id)
